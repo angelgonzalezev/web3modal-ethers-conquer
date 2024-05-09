@@ -3,6 +3,7 @@ import { useWeb3ModalAccount, useWeb3ModalProvider } from "@web3modal/ethers/rea
 import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import HeaderComponent from "./components/HeaderComponent";
+import SendTransactionComponent from "./components/SendTransactionComponent";
 
 function App() {
   const { address, chainId, isConnected } = useWeb3ModalAccount();
@@ -57,6 +58,7 @@ function App() {
               Chain Id: {chainId}
             </Text>
           </Flex>
+          <SendTransactionComponent infoAccount={infoAccount} setNeedRefresh={setNeedRefresh} />
         </>
       )}
     </Box>
