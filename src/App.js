@@ -4,6 +4,8 @@ import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import HeaderComponent from "./components/HeaderComponent";
 import SendTransactionComponent from "./components/SendTransactionComponent";
+import SignMessageComponent from "./components/SignMessageComponent";
+import VerifyMessageComponent from "./components/VerifyMessageComponent";
 
 function App() {
   const { address, chainId, isConnected } = useWeb3ModalAccount();
@@ -59,6 +61,10 @@ function App() {
             </Text>
           </Flex>
           <SendTransactionComponent infoAccount={infoAccount} setNeedRefresh={setNeedRefresh} />
+          <Flex gap={4}>
+            <SignMessageComponent infoAccount={infoAccount} />
+            <VerifyMessageComponent />
+          </Flex>
         </>
       )}
     </Box>
